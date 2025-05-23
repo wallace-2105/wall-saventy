@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wall Seventy - Moda Masculina Moderna</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6B7280',
+                        secondary: '#57534E',
+                        accent: '#78716C',
+                        beige: '#F5F5F0',
+                        olive: '#6B7280',
+                        brown: '#57534E',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cart-item-enter {
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+        .cart-item-enter-active {
+            opacity: 1;
+            transform: translateX(0);
+            transition: all 300ms ease-in;
+        }
+        .cart-item-exit {
+            opacity: 1;
+        }
+        .cart-item-exit-active {
+            opacity: 0;
+            transform: translateX(20px);
+            transition: all 300ms ease-out;
+        }
+        
+        @media (max-width: 640px) {
+            .product-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+    </style>
+</head>
+<body class="bg-beige font-sans text-gray-800">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="bg-brown text-beige w-12 h-12 rounded-full flex items-center justify-center text-2xl font-bold">70</div>
+                <h1 class="text-xl font-bold text-brown">WALL SEVENTY</h1>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <button id="cart-button" class="relative">
+                    <i class="fas fa-shopping-cart text-brown text-xl"></i>
+                    <span id="cart-count" class="absolute -top-2 -right-2 bg-olive text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+                </button>
+                <button id="mobile-menu-button" class="md:hidden">
+                    <i class="fas fa-bars text-brown text-xl"></i>
+                </button>
+            </div>
+            
+            <nav class="hidden md:flex space-x-6">
+                <a href="#" class="text-brown hover:text-accent">Home</a>
+                <a href="#products" class="text-brown hover:text-accent">Produtos</a>
+                <a href="#about" class="text-brown hover:text-accent">Sobre</a>
+                <a href="#contact" class="text-brown hover:text-accent">Contato</a>
+            </nav>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-2">
+                <a href="#" class="text-brown hover:text-accent py-2">Home</a>
+                <a href="#products" class="text-brown hover:text-accent py-2">Produtos</a>
+                <a href="#about" class="text-brown hover:text-accent py-2">Sobre</a>
+                <a href="#contact" class="text-brown hover:text-accent py-2">Contato</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-brown to-olive text-white py-16">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-8 md:mb-0">
+                <h2 class="text-4xl font-bold mb-4">Moda Masculina Moderna</h2>
+                <p class="text-lg mb-6">Peças versáteis em tons terrosos para looks elegantes e contemporâneos.</p>
+                <a href="#products" class="bg-beige text-brown px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition">Ver Coleção</a>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Homem estiloso" class="rounded-lg shadow-xl max-w-md w-full">
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-16 bg-beige">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-brown mb-8">Nossos Produtos</h2>
+            
+            <!-- Categories -->
+            <div class="flex flex-wrap justify-center gap-2 mb-8">
+                <button class="category-btn px-4 py-2 rounded-full bg-brown text-beige" data-category="all">Todos</button>
+                <button class="category-btn px-4 py-2 rounded-full bg-white text-brown border border-brown hover:bg-brown hover:text-beige" data-category="camisas">Camisas</button>
+                <button class="category-btn px-4 py-2 rounded-full bg-white text-brown border border-brown hover:bg-brown hover:text-beige" data-category="calcas">Calças</button>
+                <button class="category-btn px-4 py-2 rounded-full bg-white text-brown border border-brown hover:bg-brown hover:text-beige" data-category="tenis">Tênis</button>
+                <button class="category-btn px-4 py-2 rounded-full bg-white text-brown border border-brown hover:bg-brown hover:text-beige" data-category="shorts">Shorts</button>
+            </div>
+            
+            <div class="product-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-8">
+                <!-- Products will be loaded here by JavaScript -->
+            </div>
+            
+            <div class="text-center mt-8">
+                <button id="load-more" class="bg-brown text-beige px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition">Ver Mais Produtos</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <h2 class="text-3xl font-bold text-brown mb-6">Sobre a Wall Seventy</h2>
+                    <p class="text-gray-700 mb-4">A Wall Seventy nasceu da paixão por moda masculina contemporânea, com peças que combinam estilo e conforto.</p>
+                    <p class="text-gray-700 mb-4">Nossa paleta de cores neutras e tons terrosos foi cuidadosamente selecionada para oferecer versatilidade e elegância em cada look.</p>
+                    <p class="text-gray-700">Cada peça é pensada para homens modernos que valorizam qualidade e design em seu vestuário.</p>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1602810319428-019690571334?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Sobre nós" class="rounded-lg shadow-lg w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-beige">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-brown mb-12">Entre em Contato</h2>
+            
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-1/2 bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold text-brown mb-4">Informações de Contato</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <i class="fas fa-envelope text-brown mt-1"></i>
+                            <div>
+                                <p class="font-medium text-gray-700">Email</p>
+                                <p class="text-gray-600">wallace.wcs83@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <i class="fas fa-phone-alt text-brown mt-1"></i>
+                            <div>
+                                <p class="font-medium text-gray-700">Telefone</p>
+                                <p class="text-gray-600">(11) 94894-7933</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <i class="fas fa-map-marker-alt text-brown mt-1"></i>
+                            <div>
+                                <p class="font-medium text-gray-700">Endereço</p>
+                                <p class="text-gray-600">São Paulo - Centro</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <i class="fab fa-instagram text-brown mt-1"></i>
+                            <div>
+                                <p class="font-medium text-gray-700">Instagram</p>
+                                <p class="text-gray-600">@wall_70</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <a href="https://wa.me/5511948947933" class="bg-green-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-green-700 transition flex items-center justify-center space-x-2">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Fale pelo WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold text-brown mb-4">Envie uma Mensagem</h3>
+                    <form id="contact-form" class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-gray-700 mb-1">Nome</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-brown">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-brown">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-700 mb-1">Mensagem</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-brown"></textarea>
+                        </div>
+                        <button type="submit" class="bg-brown text-beige px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition w-full">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brown text-beige py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0 flex items-center space-x-2">
+                    <div class="bg-beige text-brown w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold">70</div>
+                    <h3 class="text-xl font-bold">WALL SEVENTY</h3>
+                </div>
+                
+                <div class="flex space-x-4 mb-4 md:mb-0">
+                    <a href="#" class="hover:text-accent"><i class="fab fa-instagram text-xl"></i></a>
+                    <a href="https://wa.me/5511948947933" class="hover:text-accent"><i class="fab fa-whatsapp text-xl"></i></a>
+                    <a href="mailto:wallace.wcs83@gmail.com" class="hover:text-accent"><i class="fas fa-envelope text-xl"></i></a>
+                </div>
+                
+                <div class="text-sm">
+                    <p>&copy; 2023 Wall Seventy. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Sidebar -->
+    <div id="cart-sidebar" class="fixed top-0 right-0 h-full w-full md:w-96 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50 overflow-y-auto">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-bold text-brown">Seu Carrinho</h3>
+                <button id="close-cart" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div id="cart-items" class="space-y-4 mb-6">
+                <!-- Cart items will be loaded here -->
+                <p id="empty-cart-message" class="text-gray-500 text-center py-8">Seu carrinho está vazio</p>
+            </div>
+            
+            <div class="border-t pt-4">
+                <div class="flex justify-between mb-2">
+                    <span class="text-gray-700">Subtotal</span>
+                    <span id="cart-subtotal" class="font-medium">R$ 0,00</span>
+                </div>
+                <div class="flex justify-between mb-2">
+                    <span class="text-gray-700">Frete</span>
+                    <span id="shipping-fee" class="font-medium">R$ 15,99</span>
+                </div>
+                <div class="flex justify-between text-lg font-bold mt-4">
+                    <span>Total</span>
+                    <span id="cart-total">R$ 15,99</span>
+                </div>
+                
+                <button id="checkout-button" class="bg-brown text-beige w-full py-3 rounded-lg font-medium hover:bg-opacity-90 transition mt-6">
+                    Finalizar Compra
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Checkout Modal -->
+    <div id="checkout-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg p-6 w-full max-w-md">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold text-brown">Finalizar Compra</h3>
+                <button id="close-checkout-modal" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <form id="checkout-form" class="space-y-4">
+                <div>
+                    <label for="full-name" class="block text-gray-700 mb-1">Nome Completo</label>
+                    <input type="text" id="full-name" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-brown">
+                </div>
+                
+                <div>
+                    <label for="email" class="block text-gray-700 mb-1">Email</label>
+                    <input type="email" id="checkout-email" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-brown">
+                </div>
+                
+                <div>
+                    <label for="address" class="block text-gray-700 mb-1">Endereço</label>
+                    <textarea id="address" rows="2" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-brown"></textarea>
+                </div>
+                
+                <div>
+                    <label for="payment-method" class="block text-gray-700 mb-1">Método de Pagamento</label>
+                    <select id="payment-method" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-brown">
+                        <option value="">Selecione...</option>
+                        <option value="credit">Cartão de Crédito</option>
+                        <option value="debit">Cartão de Débito</option>
+                        <option value="pix">PIX</option>
+                    </select>
+                </div>
+                
+                <div id="credit-card-fields" class="hidden space-y-4">
+                    <div>
+                        <label for="card-number" class="block text-gray-700 mb-1">Número do Cartão</label>
+                        <input type="text" id="card-number" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-brown">
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label for="expiry-date" class="block text-gray-700 mb-1">Validade</label>
+                            <input type="text" id="expiry-date" placeholder="MM/AA" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-brown">
+                        </div>
+                        
+                        <div>
+                            <label for="cvv" class="block text-gray-700 mb-1">CVV</label>
+                            <input type="text" id="cvv" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-brown">
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="pix-instructions" class="hidden bg-beige p-4 rounded-lg">
+                    <p class="font-medium mb-2">Pagamento via PIX</p>
+                    <p class="text-sm">Após confirmar a compra, você receberá um QR Code para pagamento via PIX.</p>
+                </div>
+                
+                <div class="border-t pt-4">
+                    <div class="flex justify-between font-bold">
+                        <span>Total</span>
+                        <span id="checkout-total">R$ 15,99</span>
+                    </div>
+                </div>
+                
+                <button type="submit" class="bg-brown text-beige w-full py-3 rounded-lg font-medium hover:bg-opacity-90 transition mt-4">
+                    Confirmar Compra
+                </button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Success Modal -->
+    <div id="success-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg p-6 w-full max-w-md text-center">
+            <div class="text-green-500 text-5xl mb-4">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3 class="text-xl font-bold text-brown mb-2">Compra realizada com sucesso!</h3>
+            <p class="text-gray-700 mb-6">Obrigado por comprar na Wall Seventy. Um email com os detalhes da sua compra foi enviado para você.</p>
+            <button id="close-success-modal" class="bg-brown text-beige px-6 py-2 rounded-lg font-medium hover:bg-opacity-90 transition">
+                Fechar
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Products Data with categories
+        const products = [
+            {
+                id: 1,
+                name: "Camisa Oversized Bege",
+                price: 129.90,
+                image: "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                description: "Camisa oversized em tecido leve e confortável.",
+                category: "camisas"
+            },
+            {
+                id: 2,
+                name: "Calça Cargo Marrom",
+                price: 179.90,
+                image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                description: "Calça cargo com múltiplos bolsos.",
+                category: "calcas"
+            },
+            {
+                id: 3,
+                name: "Tênis Casual Cinza",
+                price: 249.90,
+                image: "https://images.unsplash.com/photo-1600269452121-1f5d14159c5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                description: "Tênis em couro sintético com solado confortável.",
+                category: "tenis"
+            },
+            {
+                id: 4,
+                name: "Short Esportivo Verde",
+                price: 99.90,
+                image: "https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                description: "Short em tecido respirável para atividades físicas.",
+                category: "shorts"
+            },
+            {
+                id: 5,
+                name: "Camisa Social Oliva",
+                price: 159.90,
+                image: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                description: "Camisa social em popeline com corte slim.",
+                category: "camisas"
+            },
+            {
+                id: 6,
+                name: "Calça Jeans Marrom",
+                price: 199.90,
+                image: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                description: "Calça jeans em tom terroso com corte moderno.",
+                category: "calcas"
+            },
+            {
+                id: 7,
+                name: "Tênis Esportivo Bege",
+                price: 279.90,
+                image: "https://images.unsplash.com/photo-1600269452121-1f5d14159c5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                description: "Tênis para corrida com amortecimento.",
+                category: "tenis"
+            },
+            {
+                id: 8,
+                name: "Short Jeans Marrom",
+                price: 119.90,
+                image: "https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                description: "Short jeans com bolsos frontais.",
+                category: "shorts"
+            },
+            {
+                id: 9,
+                name: "Camisa Polo Cinza",
+                price: 139.90,
+                image: "https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                description: "Camisa polo em malha de algodão.",
+                category: "camisas"
+            },
+            {
+                id: 10,
+                name: "Calça Sarja Bege",
+                price: 189.90,
+                image: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                description: "Calça sarja em tecido resistente.",
+                category: "calcas"
+            }
+        ];
+
+        // Shopping Cart
+        let cart = [];
+        const shippingFee = 15.99;
+        let currentCategory = 'all';
+        let displayedProducts = 5;
+
+        // DOM Elements
+        const productGrid = document.querySelector('.product-grid');
+        const loadMoreBtn = document.getElementById('load-more');
+        const cartButton = document.getElementById('cart-button');
+        const cartSidebar = document.getElementById('cart-sidebar');
+        const closeCartButton = document.getElementById('close-cart');
+        const cartItemsContainer = document.getElementById('cart-items');
+        const emptyCartMessage = document.getElementById('empty-cart-message');
+        const cartCount = document.getElementById('cart-count');
+        const cartSubtotal = document.getElementById('cart-subtotal');
+        const cartTotal = document.getElementById('cart-total');
+        const checkoutButton = document.getElementById('checkout-button');
+        const checkoutModal = document.getElementById('checkout-modal');
+        const closeCheckoutModal = document.getElementById('close-checkout-modal');
+        const checkoutForm = document.getElementById('checkout-form');
+        const paymentMethod = document.getElementById('payment-method');
+        const creditCardFields = document.getElementById('credit-card-fields');
+        const pixInstructions = document.getElementById('pix-instructions');
+        const successModal = document.getElementById('success-modal');
+        const closeSuccessModal = document.getElementById('close-success-modal');
+        const checkoutTotal = document.getElementById('checkout-total');
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const categoryButtons = document.querySelectorAll('.category-btn');
+
+        // Initial display of products
+        displayProductsByCategory(currentCategory, 0, displayedProducts);
+
+        // Category filter
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Update active category button
+                categoryButtons.forEach(btn => {
+                    btn.classList.remove('bg-brown', 'text-beige');
+                    btn.classList.add('bg-white', 'text-brown', 'border', 'border-brown', 'hover:bg-brown', 'hover:text-beige');
+                });
+                
+                button.classList.remove('bg-white', 'text-brown', 'border', 'border-brown', 'hover:bg-brown', 'hover:text-beige');
+                button.classList.add('bg-brown', 'text-beige');
+                
+                // Filter products
+                currentCategory = button.dataset.category;
+                displayedProducts = 5;
+                productGrid.innerHTML = '';
+                displayProductsByCategory(currentCategory, 0, displayedProducts);
+                
+                // Show or hide load more button
+                const filteredProducts = currentCategory === 'all' 
+                    ? products 
+                    : products.filter(p => p.category === currentCategory);
+                
+                if (filteredProducts.length > displayedProducts) {
+                    loadMoreBtn.classList.remove('hidden');
+                } else {
+                    loadMoreBtn.classList.add('hidden');
+                }
+            });
+        });
+
+        // Load more products
+        loadMoreBtn.addEventListener('click', () => {
+            const filteredProducts = currentCategory === 'all' 
+                ? products 
+                : products.filter(p => p.category === currentCategory);
+            
+            displayProductsByCategory(currentCategory, displayedProducts, filteredProducts.length);
+            displayedProducts = filteredProducts.length;
+            loadMoreBtn.classList.add('hidden');
+        });
+
+        // Mobile menu toggle
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Cart toggle
+        cartButton.addEventListener('click', () => {
+            cartSidebar.classList.remove('translate-x-full');
+            cartSidebar.classList.add('translate-x-0');
+        });
+
+        closeCartButton.addEventListener('click', () => {
+            cartSidebar.classList.remove('translate-x-0');
+            cartSidebar.classList.add('translate-x-full');
+        });
+
+        // Checkout modal
+        checkoutButton.addEventListener('click', () => {
+            cartSidebar.classList.remove('translate-x-0');
+            cartSidebar.classList.add('translate-x-full');
+            checkoutModal.classList.remove('hidden');
+            checkoutTotal.textContent = cartTotal.textContent;
+        });
+
+        closeCheckoutModal.addEventListener('click', () => {
+            checkoutModal.classList.add('hidden');
+        });
+
+        // Payment method change
+        paymentMethod.addEventListener('change', (e) => {
+            creditCardFields.classList.add('hidden');
+            pixInstructions.classList.add('hidden');
+            
+            if (e.target.value === 'credit' || e.target.value === 'debit') {
+                creditCardFields.classList.remove('hidden');
+            } else if (e.target.value === 'pix') {
+                pixInstructions.classList.remove('hidden');
+            }
+        });
+
+        // Success modal
+        closeSuccessModal.addEventListener('click', () => {
+            successModal.classList.add('hidden');
+        });
+
+        // Checkout form submission
+        checkoutForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // In a real application, you would process the payment here
+            // For this demo, we'll just show the success modal
+            
+            // Send order to email (simulated)
+            sendOrderToEmail();
+            
+            checkoutModal.classList.add('hidden');
+            successModal.classList.remove('hidden');
+            
+            // Clear cart
+            cart = [];
+            updateCart();
+        });
+
+        // Contact form submission
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+            e.target.reset();
+        });
+
+        // Display products by category
+        function displayProductsByCategory(category, start, end) {
+            const filteredProducts = category === 'all' 
+                ? products 
+                : products.filter(p => p.category === category);
+            
+            for (let i = start; i < end && i < filteredProducts.length; i++) {
+                const product = filteredProducts[i];
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300';
+                productCard.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <div class="flex justify-between items-start mb-1">
+                            <h3 class="font-bold text-lg text-brown">${product.name}</h3>
+                            <span class="bg-${product.category === 'camisas' ? 'blue' : 
+                                             product.category === 'calcas' ? 'green' : 
+                                             product.category === 'tenis' ? 'purple' : 'yellow'}-100 text-${product.category === 'camisas' ? 'blue' : 
+                                             product.category === 'calcas' ? 'green' : 
+                                             product.category === 'tenis' ? 'purple' : 'yellow'}-800 text-xs px-2 py-1 rounded-full">
+                                ${product.category === 'camisas' ? 'Camisa' : 
+                                  product.category === 'calcas' ? 'Calça' : 
+                                  product.category === 'tenis' ? 'Tênis' : 'Short'}
+                            </span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3">${product.description}</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-brown">R$ ${product.price.toFixed(2)}</span>
+                            <button class="add-to-cart bg-brown text-beige px-3 py-1 rounded hover:bg-opacity-90 transition" data-id="${product.id}">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+                productGrid.appendChild(productCard);
+            }
+            
+            // Add event listeners to "Add to cart" buttons
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const productId = parseInt(e.target.closest('.add-to-cart').getAttribute('data-id'));
+                    addToCart(productId);
+                });
+            });
+        }
+
+        // Add product to cart
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    image: product.image,
+                    quantity: 1
+                });
+            }
+            
+            updateCart();
+            
+            // Show cart sidebar
+            cartSidebar.classList.remove('translate-x-full');
+            cartSidebar.classList.add('translate-x-0');
+        }
+
+        // Update cart UI
+        function updateCart() {
+            // Update cart count
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.textContent = totalItems;
+            
+            // Update cart items
+            cartItemsContainer.innerHTML = '';
+            
+            if (cart.length === 0) {
+                emptyCartMessage.classList.remove('hidden');
+                checkoutButton.disabled = true;
+            } else {
+                emptyCartMessage.classList.add('hidden');
+                checkoutButton.disabled = false;
+                
+                cart.forEach(item => {
+                    const cartItem = document.createElement('div');
+                    cartItem.className = 'flex items-center border-b pb-4';
+                    cartItem.innerHTML = `
+                        <img src="${item.image}" alt="${item.name}" class="w-16 h-16 object-cover rounded">
+                        <div class="ml-4 flex-1">
+                            <h4 class="font-medium text-brown">${item.name}</h4>
+                            <div class="flex justify-between items-center mt-1">
+                                <div class="flex items-center">
+                                    <button class="decrease-quantity text-gray-500 px-2" data-id="${item.id}">
+                                        <i class="fas fa-minus text-xs"></i>
+                                    </button>
+                                    <span class="quantity mx-2">${item.quantity}</span>
+                                    <button class="increase-quantity text-gray-500 px-2" data-id="${item.id}">
+                                        <i class="fas fa-plus text-xs"></i>
+                                    </button>
+                                </div>
+                                <span class="font-medium">R$ ${(item.price * item.quantity).toFixed(2)}</span>
+                            </div>
+                        </div>
+                        <button class="remove-item ml-2 text-gray-500 hover:text-red-500" data-id="${item.id}">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    `;
+                    cartItemsContainer.appendChild(cartItem);
+                });
+                
+                // Add event listeners to quantity buttons
+                document.querySelectorAll('.increase-quantity').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const productId = parseInt(e.target.closest('button').getAttribute('data-id'));
+                        const item = cart.find(item => item.id === productId);
+                        item.quantity += 1;
+                        updateCart();
+                    });
+                });
+                
+                document.querySelectorAll('.decrease-quantity').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const productId = parseInt(e.target.closest('button').getAttribute('data-id'));
+                        const item = cart.find(item => item.id === productId);
+                        
+                        if (item.quantity > 1) {
+                            item.quantity -= 1;
+                        } else {
+                            cart = cart.filter(item => item.id !== productId);
+                        }
+                        
+                        updateCart();
+                    });
+                });
+                
+                document.querySelectorAll('.remove-item').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const productId = parseInt(e.target.closest('button').getAttribute('data-id'));
+                        cart = cart.filter(item => item.id !== productId);
+                        updateCart();
+                    });
+                });
+            }
+            
+            // Update totals
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const total = subtotal + shippingFee;
+            
+            cartSubtotal.textContent = `R$ ${subtotal.toFixed(2)}`;
+            cartTotal.textContent = `R$ ${total.toFixed(2)}`;
+        }
+
+        // Simulate sending order to email
+        function sendOrderToEmail() {
+            // In a real application, you would send this data to your backend
+            // which would then send an email with the order details
+            
+            const orderDetails = {
+                customer: {
+                    name: document.getElementById('full-name').value,
+                    email: document.getElementById('checkout-email').value,
+                    address: document.getElementById('address').value
+                },
+                paymentMethod: document.getElementById('payment-method').value,
+                items: cart,
+                subtotal: cart.reduce((sum, item) => sum + (item.price * item.quantity), 0),
+                shipping: shippingFee,
+                total: cart.reduce((sum, item) => sum + (item.price * item.quantity), 0) + shippingFee,
+                date: new Date().toISOString()
+            };
+            
+            console.log('Order sent to email:', orderDetails);
+            
+            // Reset form
+            checkoutForm.reset();
+        }
+    </script>
+</body>
+</html>
