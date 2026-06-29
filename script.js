@@ -28,6 +28,7 @@ const products = [
     id: 1,
     name: "Camiseta Essential Preta",
     category: "camisetas",
+    image: "",
     price: 99.9,
     description: "Algodão macio, gola firme e corte versátil para todo dia.",
     tone: "linear-gradient(135deg, #050505, #272727)"
@@ -36,6 +37,7 @@ const products = [
     id: 2,
     name: "Camiseta Essential Branca",
     category: "camisetas",
+    image: "",
     price: 99.9,
     description: "Base limpa em malha premium com toque leve e respirável.",
     tone: "linear-gradient(135deg, #f7f7f4, #cfcfc8)"
@@ -44,6 +46,7 @@ const products = [
     id: 3,
     name: "Camiseta Premium Azul",
     category: "camisetas",
+    image: "",
     price: 119.9,
     description: "Azul profundo com acabamento minimalista e caimento moderno.",
     tone: "linear-gradient(135deg, #071225, #3159d4)"
@@ -52,6 +55,7 @@ const products = [
     id: 4,
     name: "Camiseta Street Cinza",
     category: "camisetas",
+    image: "",
     price: 109.9,
     description: "Cinza urbano com visual limpo para combinações fáceis.",
     tone: "linear-gradient(135deg, #22252a, #888c92)"
@@ -60,6 +64,7 @@ const products = [
     id: 5,
     name: "Camiseta Oversized",
     category: "camisetas",
+    image: "",
     price: 129.9,
     description: "Modelagem ampla com presença streetwear e toque premium.",
     tone: "linear-gradient(135deg, #0e0e0e, #70624a)"
@@ -68,6 +73,7 @@ const products = [
     id: 6,
     name: "Camiseta Minimalista",
     category: "camisetas",
+    image: "",
     price: 114.9,
     description: "Design sem excesso, perfeita para looks elegantes.",
     tone: "linear-gradient(135deg, #f4f3ee, #b9b9b4)"
@@ -76,6 +82,7 @@ const products = [
     id: 7,
     name: "Camiseta Urban",
     category: "camisetas",
+    image: "",
     price: 124.9,
     description: "Visual urbano com estrutura encorpada e acabamento premium.",
     tone: "linear-gradient(135deg, #15171b, #3c6df0)"
@@ -84,6 +91,7 @@ const products = [
     id: 8,
     name: "Camiseta Classic",
     category: "camisetas",
+    image: "",
     price: 104.9,
     description: "Clássica, confortável e pronta para qualquer ocasião.",
     tone: "linear-gradient(135deg, #202226, #d5d2c9)"
@@ -92,6 +100,7 @@ const products = [
     id: 9,
     name: "Camiseta Premium Black",
     category: "camisetas",
+    image: "",
     price: 139.9,
     description: "Preta intensa com toque refinado e costura reforçada.",
     tone: "linear-gradient(135deg, #000000, #1b1b1d)"
@@ -100,6 +109,7 @@ const products = [
     id: 10,
     name: "Camiseta Premium White",
     category: "camisetas",
+    image: "",
     price: 139.9,
     description: "Branco sofisticado em tecido encorpado de alta durabilidade.",
     tone: "linear-gradient(135deg, #ffffff, #d8d6cf)"
@@ -108,6 +118,7 @@ const products = [
     id: 11,
     name: "Jeans Slim",
     category: "calcas",
+    image: "",
     price: 219.9,
     description: "Lavagem azul escura com corte slim e elastano confortável.",
     tone: "linear-gradient(135deg, #0e1b2c, #375a84)"
@@ -116,6 +127,7 @@ const products = [
     id: 12,
     name: "Jeans Reta",
     category: "calcas",
+    image: "",
     price: 209.9,
     description: "Modelagem reta atemporal com acabamento resistente.",
     tone: "linear-gradient(135deg, #18202a, #627084)"
@@ -124,6 +136,7 @@ const products = [
     id: 13,
     name: "Jeans Black",
     category: "calcas",
+    image: "",
     price: 229.9,
     description: "Denim preto para composições noturnas e urbanas.",
     tone: "linear-gradient(135deg, #020202, #2c2f34)"
@@ -132,6 +145,7 @@ const products = [
     id: 14,
     name: "Cargo Verde",
     category: "calcas",
+    image: "",
     price: 239.9,
     description: "Bolsos funcionais e verde fechado com pegada utilitária.",
     tone: "linear-gradient(135deg, #182219, #56654c)"
@@ -140,6 +154,7 @@ const products = [
     id: 15,
     name: "Cargo Preta",
     category: "calcas",
+    image: "",
     price: 239.9,
     description: "Cargo preta com volume controlado e presença street.",
     tone: "linear-gradient(135deg, #080808, #3a3a3c)"
@@ -148,6 +163,7 @@ const products = [
     id: 16,
     name: "Moletom Casual",
     category: "calcas",
+    image: "",
     price: 189.9,
     description: "Conforto premium com visual limpo para dias leves.",
     tone: "linear-gradient(135deg, #2a2d32, #9a9c9f)"
@@ -156,6 +172,7 @@ const products = [
     id: 17,
     name: "Jogger Preta",
     category: "calcas",
+    image: "",
     price: 179.9,
     description: "Punho ajustado, tecido flexível e caimento esportivo.",
     tone: "linear-gradient(135deg, #090909, #202226)"
@@ -164,6 +181,7 @@ const products = [
     id: 18,
     name: "Jogger Cinza",
     category: "calcas",
+    image: "",
     price: 174.9,
     description: "Jogger cinza com estrutura leve e acabamento discreto.",
     tone: "linear-gradient(135deg, #33363a, #a7a8a8)"
@@ -172,6 +190,7 @@ const products = [
     id: 19,
     name: "Jaqueta Jeans",
     category: "jaquetas",
+    image: "",
     price: 289.9,
     description: "Camada clássica em denim encorpado e lavagem premium.",
     tone: "linear-gradient(135deg, #132034, #456990)"
@@ -180,6 +199,7 @@ const products = [
     id: 20,
     name: "Jaqueta Bomber",
     category: "jaquetas",
+    image: "",
     price: 319.9,
     description: "Silhueta bomber com acabamento urbano e punhos firmes.",
     tone: "linear-gradient(135deg, #060606, #4a463f)"
@@ -188,6 +208,7 @@ const products = [
     id: 21,
     name: "Jaqueta Corta-Vento",
     category: "jaquetas",
+    image: "",
     price: 279.9,
     description: "Leve, funcional e ideal para sobreposição em meia estação.",
     tone: "linear-gradient(135deg, #111827, #3c6df0)"
@@ -196,6 +217,7 @@ const products = [
     id: 22,
     name: "Jaqueta Streetwear",
     category: "jaquetas",
+    image: "",
     price: 339.9,
     description: "Volume moderno, visual street e detalhes discretos.",
     tone: "linear-gradient(135deg, #171717, #777064)"
@@ -204,6 +226,7 @@ const products = [
     id: 23,
     name: "Jaqueta Premium",
     category: "jaquetas",
+    image: "",
     price: 389.9,
     description: "Construção refinada para um visual forte e sofisticado.",
     tone: "linear-gradient(135deg, #050505, #c8a45d)"
@@ -212,6 +235,7 @@ const products = [
     id: 24,
     name: "Jaqueta Casual",
     category: "jaquetas",
+    image: "",
     price: 299.9,
     description: "Peça versátil para looks casuais com acabamento superior.",
     tone: "linear-gradient(135deg, #2b2d31, #c8c6bd)"
@@ -220,6 +244,7 @@ const products = [
     id: 25,
     name: "Sneaker Urban",
     category: "tenis",
+    image: "",
     price: 299.9,
     description: "Sneaker de linhas limpas para rotina urbana.",
     tone: "linear-gradient(135deg, #111111, #50545a)"
@@ -228,6 +253,7 @@ const products = [
     id: 26,
     name: "Sneaker White",
     category: "tenis",
+    image: "",
     price: 289.9,
     description: "Branco essencial com solado confortável e visual premium.",
     tone: "linear-gradient(135deg, #ffffff, #cfd2d8)"
@@ -236,6 +262,7 @@ const products = [
     id: 27,
     name: "Sneaker Black",
     category: "tenis",
+    image: "",
     price: 289.9,
     description: "Preto total para combinações limpas e noturnas.",
     tone: "linear-gradient(135deg, #020202, #2f3137)"
@@ -244,6 +271,7 @@ const products = [
     id: 28,
     name: "Running Pro",
     category: "tenis",
+    image: "",
     price: 349.9,
     description: "Visual esportivo com energia premium e amortecimento leve.",
     tone: "linear-gradient(135deg, #111827, #3c6df0)"
@@ -252,6 +280,7 @@ const products = [
     id: 29,
     name: "Street Pro",
     category: "tenis",
+    image: "",
     price: 329.9,
     description: "Tênis street robusto com linhas marcantes e confortáveis.",
     tone: "linear-gradient(135deg, #101010, #8d794e)"
@@ -260,6 +289,7 @@ const products = [
     id: 30,
     name: "Casual Premium",
     category: "tenis",
+    image: "",
     price: 319.9,
     description: "Modelo casual refinado para elevar looks minimalistas.",
     tone: "linear-gradient(135deg, #202226, #d0c6ac)"
@@ -268,6 +298,7 @@ const products = [
     id: 31,
     name: "Casual White",
     category: "tenis",
+    image: "",
     price: 279.9,
     description: "Tênis branco casual, leve e fácil de combinar.",
     tone: "linear-gradient(135deg, #f8f8f5, #babdc4)"
@@ -276,6 +307,7 @@ const products = [
     id: 32,
     name: "Casual Black",
     category: "tenis",
+    image: "",
     price: 279.9,
     description: "Casual preto com acabamento fosco e discreto.",
     tone: "linear-gradient(135deg, #030303, #25282f)"
@@ -284,6 +316,7 @@ const products = [
     id: 33,
     name: "Sport Max",
     category: "tenis",
+    image: "",
     price: 369.9,
     description: "Performance visual com pegada esportiva e urbana.",
     tone: "linear-gradient(135deg, #0b0d12, #3c6df0 55%, #c8a45d)"
@@ -717,3 +750,8 @@ function init() {
 }
 
 document.addEventListener("DOMContentLoaded", init);
+
+
+
+
+
