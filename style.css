@@ -508,6 +508,18 @@ h3 {
   background: var(--product-bg);
 }
 
+.product-preview {
+  position: absolute;
+  inset: 18px;
+  width: auto;
+  height: auto;
+  min-height: calc(100% - 36px);
+  min-width: calc(100% - 36px);
+  object-fit: cover;
+  border-radius: 28px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+}
+
 .product-media::before {
   position: absolute;
   inset: 18px;

@@ -23,6 +23,7 @@ const categoryMeta = {
   }
 };
 
+// Adicione a URL de imagem em cada produto no campo `image` para que a foto apareça no card.
 const products = [
   {
     id: 1,
@@ -390,10 +391,19 @@ function createProductCard(product, index = 0) {
   const card = document.createElement("article");
   card.className = `product-card reveal ${index % 2 === 0 ? "slide-left" : "slide-right"}`;
   card.style.setProperty("--product-bg", product.tone);
+
+  const mediaContent = product.image
+    ? `<img class="product-preview" src="${product.image}" alt="${product.name}">`
+    : `<span class="product-visual" aria-hidden="true"></span>`;
+
+  const mediaAttrs = product.image
+    ? ""
+    : `role="img" aria-label="Imagem placeholder elegante de ${product.name}"`;
+
   card.innerHTML = `
-    <div class="product-media" role="img" aria-label="Imagem placeholder elegante de ${product.name}">
+    <div class="product-media" ${mediaAttrs}>
       <span class="product-tag">${categoryMeta[product.category].label}</span>
-      <span class="product-visual" aria-hidden="true"></span>
+      ${mediaContent}
     </div>
     <div class="product-info">
       <div>
