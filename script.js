@@ -4,22 +4,26 @@ const categoryMeta = {
   camisetas: {
     label: "Camisetas",
     description: "Malhas premium, cortes essenciais e oversized.",
+    image: "camisa1.jpg",
     background: "linear-gradient(135deg, #101010 0%, #31343a 52%, #c8a45d 100%)"
   },
   calcas: {
     label: "Calças",
     description: "Jeans, cargos, joggers e moletons para rotina urbana.",
+    image: "calça1.jpg",
     background: "linear-gradient(135deg, #17191d 0%, #41464d 55%, #3c6df0 100%)"
-  },
-  jaquetas: {
-    label: "Jaquetas",
-    description: "Camadas fortes para elevar qualquer composição.",
-    background: "linear-gradient(135deg, #070707 0%, #2b2d31 48%, #8b764a 100%)"
   },
   tenis: {
     label: "Tênis",
     description: "Sneakers e modelos casuais com visual premium.",
+    image: "tenis1.jpg",
     background: "linear-gradient(135deg, #0c0d0f 0%, #34373d 50%, #e5e5df 100%)"
+  },
+  jaquetas: {
+    label: "Jaquetas",
+    description: "Camadas fortes para elevar qualquer composição.",
+    image: "jaqueta1.jpg",
+    background: "linear-gradient(135deg, #070707 0%, #2b2d31 48%, #8b764a 100%)"
   }
 };
 
@@ -424,6 +428,7 @@ function renderCategoryCards() {
   dom.categoryCards.innerHTML = Object.entries(categoryMeta)
     .map(([key, meta]) => `
       <button class="category-card reveal" type="button" data-category="${key}" style="--category-bg: ${meta.background}">
+        ${meta.image ? `<img class="category-card__image" src="${meta.image}" alt="${meta.label}">` : ""}
         <span>
           <h3>${meta.label}</h3>
           <p>${meta.description}</p>
