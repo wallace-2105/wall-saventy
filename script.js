@@ -427,12 +427,12 @@ function createProductCard(product, index = 0) {
 function renderCategoryCards() {
   dom.categoryCards.innerHTML = Object.entries(categoryMeta)
     .map(([key, meta]) => `
-      <button class="category-card reveal" type="button" data-category="${key}" style="--category-bg: ${meta.background}">
+      <button class="category-card reveal" type="button" data-category="${key}">
         ${meta.image ? `<img class="category-card__image" src="${meta.image}" alt="${meta.label}">` : ""}
-        <span>
+        <div class="category-card__info" style="background: ${meta.background}">
           <h3>${meta.label}</h3>
           <p>${meta.description}</p>
-        </span>
+        </div>
       </button>
     `)
     .join("");
