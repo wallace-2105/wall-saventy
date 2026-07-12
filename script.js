@@ -73,37 +73,41 @@ const products = [
     id: 5,
     name: "Camiseta Oversized",
     category: "camisetas",
-    image: "",
+    image: "Camiseta Oversized.webp",
     price: 129.9,
     description: "Modelagem ampla com presença streetwear e toque premium.",
-    tone: "linear-gradient(135deg, #0e0e0e, #70624a)"
+    tone: "linear-gradient(135deg, #0e0e0e, #70624a)",
+    featured: true
   },
   {
     id: 6,
     name: "Camiseta Minimalista",
     category: "camisetas",
-    image: "",
+    image: "Camiseta Minimalista.webp",
     price: 114.9,
     description: "Design sem excesso, perfeita para looks elegantes.",
-    tone: "linear-gradient(135deg, #f4f3ee, #b9b9b4)"
+    tone: "linear-gradient(135deg, #f4f3ee, #b9b9b4)",
+    featured: true
   },
   {
     id: 7,
     name: "Camiseta Urban",
     category: "camisetas",
-    image: "",
+    image: "Camiseta Urban.jpg",
     price: 124.9,
     description: "Visual urbano com estrutura encorpada e acabamento premium.",
-    tone: "linear-gradient(135deg, #15171b, #3c6df0)"
+    tone: "linear-gradient(135deg, #15171b, #3c6df0)",
+    featured: true
   },
   {
     id: 8,
     name: "Camiseta Classic",
     category: "camisetas",
-    image: "",
+    image: "Camiseta Classic.jpg",
     price: 104.9,
     description: "Clássica, confortável e pronta para qualquer ocasião.",
-    tone: "linear-gradient(135deg, #202226, #d5d2c9)"
+    tone: "linear-gradient(135deg, #202226, #d5d2c9)",
+    featured: true
   },
   {
     id: 9,
