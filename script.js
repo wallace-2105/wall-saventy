@@ -36,7 +36,8 @@ const products = [
     image: "",
     price: 99.9,
     description: "Algodão macio, gola firme e corte versátil para todo dia.",
-    tone: "linear-gradient(135deg, #050505, #272727)"
+    tone: "linear-gradient(135deg, #050505, #272727)",
+    featured: true
   },
   {
     id: 2,
@@ -45,7 +46,8 @@ const products = [
     image: "",
     price: 99.9,
     description: "Base limpa em malha premium com toque leve e respirável.",
-    tone: "linear-gradient(135deg, #f7f7f4, #cfcfc8)"
+    tone: "linear-gradient(135deg, #f7f7f4, #cfcfc8)",
+    featured: true
   },
   {
     id: 3,
@@ -54,7 +56,8 @@ const products = [
     image: "",
     price: 119.9,
     description: "Azul profundo com acabamento minimalista e caimento moderno.",
-    tone: "linear-gradient(135deg, #071225, #3159d4)"
+    tone: "linear-gradient(135deg, #071225, #3159d4)",
+    featured: true
   },
   {
     id: 4,
@@ -63,7 +66,8 @@ const products = [
     image: "",
     price: 109.9,
     description: "Cinza urbano com visual limpo para combinações fáceis.",
-    tone: "linear-gradient(135deg, #22252a, #888c92)"
+    tone: "linear-gradient(135deg, #22252a, #888c92)",
+    featured: true
   },
   {
     id: 5,
@@ -450,13 +454,12 @@ function renderProducts() {
 }
 
 function renderFeaturedProducts() {
-  const featuredIds = [9, 14, 20, 23, 28, 33];
+  const featuredProducts = products.filter((product) => product.featured === true);
   const fragment = document.createDocumentFragment();
 
-  products
-    .filter((product) => featuredIds.includes(product.id))
-    .forEach((product, index) => fragment.appendChild(createProductCard(product, index)));
+  featuredProducts.forEach((product, index) => fragment.appendChild(createProductCard(product, index)));
 
+  dom.featuredProducts.innerHTML = "";
   dom.featuredProducts.appendChild(fragment);
 }
 
