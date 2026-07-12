@@ -33,7 +33,7 @@ const products = [
     id: 1,
     name: "Camiseta Essential Preta",
     category: "camisetas",
-    image: "",
+    image: "CamisetaEssentialPreta.jpg",
     price: 99.9,
     description: "Algodão macio, gola firme e corte versátil para todo dia.",
     tone: "linear-gradient(135deg, #050505, #272727)",
@@ -43,7 +43,7 @@ const products = [
     id: 2,
     name: "Camiseta Essential Branca",
     category: "camisetas",
-    image: "",
+    image: "Camiseta Essential Branca1.webp",
     price: 99.9,
     description: "Base limpa em malha premium com toque leve e respirável.",
     tone: "linear-gradient(135deg, #f7f7f4, #cfcfc8)",
@@ -53,7 +53,7 @@ const products = [
     id: 3,
     name: "Camiseta Premium Azul",
     category: "camisetas",
-    image: "",
+    image: "Camiseta Premium Azul.jpg",
     price: 119.9,
     description: "Azul profundo com acabamento minimalista e caimento moderno.",
     tone: "linear-gradient(135deg, #071225, #3159d4)",
@@ -63,7 +63,7 @@ const products = [
     id: 4,
     name: "Camiseta Street Cinza",
     category: "camisetas",
-    image: "",
+    image: "Camiseta Street Cinza.jpg",
     price: 109.9,
     description: "Cinza urbano com visual limpo para combinações fáceis.",
     tone: "linear-gradient(135deg, #22252a, #888c92)",
@@ -395,13 +395,17 @@ function getProductsByCategory(category) {
   return products.filter((product) => product.category === category);
 }
 
+function getProductImageSrc(image) {
+  return image ? encodeURI(image) : "";
+}
+
 function createProductCard(product, index = 0) {
   const card = document.createElement("article");
   card.className = `product-card reveal ${index % 2 === 0 ? "slide-left" : "slide-right"}`;
   card.style.setProperty("--product-bg", product.tone);
 
   const mediaContent = product.image
-    ? `<img class="product-preview" src="${product.image}" alt="${product.name}">`
+    ? `<img class="product-preview" src="${getProductImageSrc(product.image)}" alt="${product.name}" loading="lazy">`
     : `<span class="product-visual" aria-hidden="true"></span>`;
 
   const mediaAttrs = product.image
