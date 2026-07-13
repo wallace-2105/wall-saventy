@@ -113,7 +113,7 @@ const products = [
     id: 9,
     name: "Camiseta Premium Black",
     category: "camisetas",
-    image: "",
+    image: "Camiseta Premium Black.webp",
     price: 139.9,
     description: "Preta intensa com toque refinado e costura reforçada.",
     tone: "linear-gradient(135deg, #000000, #1b1b1d)"
@@ -122,7 +122,7 @@ const products = [
     id: 10,
     name: "Camiseta Premium White",
     category: "camisetas",
-    image: "",
+    image: "Camiseta Premium White.webp",
     price: 139.9,
     description: "Branco sofisticado em tecido encorpado de alta durabilidade.",
     tone: "linear-gradient(135deg, #ffffff, #d8d6cf)"
