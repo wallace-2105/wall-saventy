@@ -461,8 +461,15 @@ function renderProducts() {
   observeReveals();
 }
 
+const featuredProductNames = [
+  "Camiseta Essential Preta",
+  "Jeans Slim",
+  "Jaqueta Jeans",
+  "Sneaker Urban"
+];
+
 function renderFeaturedProducts() {
-  const featuredProducts = products.filter((product) => product.featured === true);
+  const featuredProducts = products.filter((product) => featuredProductNames.includes(product.name));
   const fragment = document.createDocumentFragment();
 
   featuredProducts.forEach((product, index) => fragment.appendChild(createProductCard(product, index)));
