@@ -83,7 +83,7 @@ const products = [
     id: 6,
     name: "Camiseta Minimalista",
     category: "camisetas",
-    image: "Camiseta Minimalista.webp",
+    image: "./Camiseta Minimalista.webp",
     price: 114.9,
     description: "Design sem excesso, perfeita para looks elegantes.",
     tone: "linear-gradient(135deg, #f4f3ee, #b9b9b4)",
