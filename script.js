@@ -464,6 +464,9 @@ function renderProducts() {
 const featuredProductNames = [
   "Camiseta Essential Preta",
   "Jeans Slim",
+  "Jeans Reta",
+  "Jeans Black",
+  "Cargo Verde",
   "Jaqueta Jeans",
   "Sneaker Urban"
 ];
