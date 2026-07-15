@@ -140,7 +140,7 @@ const products = [
     id: 12,
     name: "Jeans Reta",
     category: "calcas",
-    image: "Jeans Reta.png",
+    image: "Jeans Reta.webp",
     price: 209.9,
     description: "Modelagem reta atemporal com acabamento resistente.",
     tone: "linear-gradient(135deg, #18202a, #627084)"
