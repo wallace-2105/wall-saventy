@@ -131,7 +131,7 @@ const products = [
     id: 11,
     name: "Jeans Slim",
     category: "calcas",
-    image: "",
+    image: "Jeans Slim.webp",
     price: 219.9,
     description: "Lavagem azul escura com corte slim e elastano confortável.",
     tone: "linear-gradient(135deg, #0e1b2c, #375a84)"
@@ -140,7 +140,7 @@ const products = [
     id: 12,
     name: "Jeans Reta",
     category: "calcas",
-    image: "",
+    image: "Jeans Reta.png",
     price: 209.9,
     description: "Modelagem reta atemporal com acabamento resistente.",
     tone: "linear-gradient(135deg, #18202a, #627084)"
@@ -149,7 +149,7 @@ const products = [
     id: 13,
     name: "Jeans Black",
     category: "calcas",
-    image: "",
+    image: "Jeans Black.webp",
     price: 229.9,
     description: "Denim preto para composições noturnas e urbanas.",
     tone: "linear-gradient(135deg, #020202, #2c2f34)"
@@ -158,7 +158,7 @@ const products = [
     id: 14,
     name: "Cargo Verde",
     category: "calcas",
-    image: "",
+    image: "Cargo Verde.webp",
     price: 239.9,
     description: "Bolsos funcionais e verde fechado com pegada utilitária.",
     tone: "linear-gradient(135deg, #182219, #56654c)"
@@ -167,7 +167,7 @@ const products = [
     id: 15,
     name: "Cargo Preta",
     category: "calcas",
-    image: "",
+    image: "calça1.jpg",
     price: 239.9,
     description: "Cargo preta com volume controlado e presença street.",
     tone: "linear-gradient(135deg, #080808, #3a3a3c)"
@@ -176,7 +176,7 @@ const products = [
     id: 16,
     name: "Moletom Casual",
     category: "calcas",
-    image: "",
+    image: "calça1.jpg",
     price: 189.9,
     description: "Conforto premium com visual limpo para dias leves.",
     tone: "linear-gradient(135deg, #2a2d32, #9a9c9f)"
@@ -185,7 +185,7 @@ const products = [
     id: 17,
     name: "Jogger Preta",
     category: "calcas",
-    image: "",
+    image: "calça1.jpg",
     price: 179.9,
     description: "Punho ajustado, tecido flexível e caimento esportivo.",
     tone: "linear-gradient(135deg, #090909, #202226)"
@@ -194,7 +194,7 @@ const products = [
     id: 18,
     name: "Jogger Cinza",
     category: "calcas",
-    image: "",
+    image: "calça1.jpg",
     price: 174.9,
     description: "Jogger cinza com estrutura leve e acabamento discreto.",
     tone: "linear-gradient(135deg, #33363a, #a7a8a8)"
