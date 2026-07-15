@@ -167,7 +167,7 @@ const products = [
     id: 15,
     name: "Cargo Preta",
     category: "calcas",
-    image: "calça1.jpg",
+    image: "Cargo Preta.webp",
     price: 239.9,
     description: "Cargo preta com volume controlado e presença street.",
     tone: "linear-gradient(135deg, #080808, #3a3a3c)"
@@ -176,7 +176,7 @@ const products = [
     id: 16,
     name: "Moletom Casual",
     category: "calcas",
-    image: "calça1.jpg",
+    image: "Moletom Casual.webp",
     price: 189.9,
     description: "Conforto premium com visual limpo para dias leves.",
     tone: "linear-gradient(135deg, #2a2d32, #9a9c9f)"
