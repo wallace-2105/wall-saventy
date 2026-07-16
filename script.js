@@ -337,12 +337,12 @@ const products = [
 ];
 
 const testimonials = [
-  ["Lucas Almeida", "São Paulo, SP", "Comprei a camiseta preta e o visual é exatamente o que eu queria: simples, forte e com cara de peça premium."],
-  ["Rafael Martins", "Curitiba, PR", "A loja passa confiança logo de primeira. O carrinho é rápido e o catálogo ficou fácil de navegar."],
-  ["Bruno Castro", "Belo Horizonte, MG", "As categorias ajudam muito. Em poucos cliques encontrei camiseta, calça e tênis para montar o look."],
-  ["Mateus Rocha", "Rio de Janeiro, RJ", "Gostei da estética limpa. Parece marca de verdade, com acabamento visual bem acima do comum."],
-  ["Diego Nunes", "Salvador, BA", "O checkout demonstrativo deixa claro que dá para plugar o pagamento depois sem refazer tudo."],
-  ["André Lima", "Florianópolis, SC", "No celular ficou ótimo. Cards grandes, botão fácil de tocar e carrinho bem organizado."]
+  ["Lucas Almeida", "São Paulo, SP", "Comprei duas camisetas e o tecido é muito melhor do que eu esperava pelo preço. Caimento perfeito."],
+  ["Rafael Martins", "Curitiba, PR", "A jaqueta chegou certinha, bem embalada, e o visual é ainda melhor pessoalmente."],
+  ["Rafael Martins", "Curitiba, PR", "A jaqueta chegou certinha, bem embalada, e o visual é ainda melhor pessoalmente."],
+  ["Mateus Rocha", "Rio de Janeiro, RJ", "Já comprei em várias lojas online e a Wall Seventy tem uma das melhores apresentações visuais que já vi."],
+  ["Mateus Rocha", "Rio de Janeiro, RJ", "Já comprei em várias lojas online e a Wall Seventy tem uma das melhores apresentações visuais que já vi."],
+  ["André Lima", "Florianópolis, SC", "Peças com cara de marca grande, mas com preço justo. Virei cliente fixo."]
 ];
 
 let cart = [];
