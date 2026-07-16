@@ -293,7 +293,7 @@ const products = [
     id: 29,
     name: "Street Pro",
     category: "tenis",
-    image: "",
+    image: "Street Pro.webp",
     price: 329.9,
     description: "Tênis street robusto com linhas marcantes e confortáveis.",
     tone: "linear-gradient(135deg, #101010, #8d794e)"
@@ -302,7 +302,7 @@ const products = [
     id: 30,
     name: "Casual Premium",
     category: "tenis",
-    image: "",
+    image: "Casual Premium.jpeg",
     price: 319.9,
     description: "Modelo casual refinado para elevar looks minimalistas.",
     tone: "linear-gradient(135deg, #202226, #d0c6ac)"
@@ -311,7 +311,7 @@ const products = [
     id: 31,
     name: "Casual White",
     category: "tenis",
-    image: "",
+    image: "Casual White.jpg",
     price: 279.9,
     description: "Tênis branco casual, leve e fácil de combinar.",
     tone: "linear-gradient(135deg, #f8f8f5, #babdc4)"
@@ -320,7 +320,7 @@ const products = [
     id: 32,
     name: "Casual Black",
     category: "tenis",
-    image: "",
+    image: "Casual Black.jpg",
     price: 279.9,
     description: "Casual preto com acabamento fosco e discreto.",
     tone: "linear-gradient(135deg, #030303, #25282f)"
@@ -329,7 +329,7 @@ const products = [
     id: 33,
     name: "Sport Max",
     category: "tenis",
-    image: "",
+    image: "Sport Max.webp",
     price: 369.9,
     description: "Performance visual com pegada esportiva e urbana.",
     tone: "linear-gradient(135deg, #0b0d12, #3c6df0 55%, #c8a45d)"
