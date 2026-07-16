@@ -185,7 +185,7 @@ const products = [
     id: 17,
     name: "Jogger Preta",
     category: "calcas",
-    image: "calça1.jpg",
+    image: "Jogger Preta.webp",
     price: 179.9,
     description: "Punho ajustado, tecido flexível e caimento esportivo.",
     tone: "linear-gradient(135deg, #090909, #202226)"
@@ -194,7 +194,7 @@ const products = [
     id: 18,
     name: "Jogger Cinza",
     category: "calcas",
-    image: "calça1.jpg",
+    image: "jogger cinza.jpg",
     price: 174.9,
     description: "Jogger cinza com estrutura leve e acabamento discreto.",
     tone: "linear-gradient(135deg, #33363a, #a7a8a8)"
@@ -409,7 +409,7 @@ function createProductCard(product, index = 0) {
   card.style.setProperty("--product-bg", product.tone);
 
   const mediaContent = product.image
-    ? `<img class="product-preview" src="${getProductImageSrc(product.image)}" alt="${product.name}" loading="lazy">`
+    ? `<img class="product-preview" src="${getProductImageSrc(product.image)}" alt="${product.name}" loading="eager">`
     : `<span class="product-visual" aria-hidden="true"></span>`;
 
   const mediaAttrs = product.image
@@ -515,6 +515,8 @@ function setActiveFilter(category) {
   const productCards = document.querySelectorAll('#products-grid .product-card');
   productCards.forEach((c) => c.classList.add('is-visible', 'is-observed'));
   productCards.forEach((c) => {
+    // remove reveal animation classes so cards are immediately visible
+    c.classList.remove('reveal', 'slide-left', 'slide-right');
     c.style.opacity = '1';
     try {
       c.style.setProperty('opacity', '1', 'important');
