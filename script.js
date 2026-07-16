@@ -346,7 +346,7 @@ const testimonials = [
 ];
 
 let cart = [];
-let activeCategory = "todos";
+let activeCategory = "tenis";
 let toastTimer;
 
 const dom = {
@@ -837,6 +837,9 @@ function init() {
   updateCart();
   bindEvents();
   handleHeaderState();
+  dom.filterButtons.forEach((button) => {
+    button.classList.toggle("is-active", button.dataset.category === activeCategory);
+  });
   observeReveals();
   window.setTimeout(forceRevealVisibility, 220);
 
