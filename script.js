@@ -458,14 +458,20 @@ function renderProducts() {
     dom.productsGrid.appendChild(createProductCard(product, index));
   });
 
+  document.querySelectorAll("#products-grid .product-card").forEach((card) => {
+    card.classList.remove("reveal", "slide-left", "slide-right");
+    card.classList.add("is-visible", "is-observed");
+  });
+
   observeReveals();
 }
 
 const featuredProductNames = [
-  "Camiseta Essential Preta",
-  "Jeans Black",
-  "Jaqueta Premium",
-  "Sneaker White"
+  "Sneaker Urban",
+  "Sneaker White",
+  "Sneaker Black",
+  "Running Pro",
+  "Street Pro"
 ];
 
 function renderFeaturedProducts() {
@@ -476,6 +482,11 @@ function renderFeaturedProducts() {
 
   dom.featuredProducts.innerHTML = "";
   dom.featuredProducts.appendChild(fragment);
+
+  document.querySelectorAll("#featured-products .product-card").forEach((card) => {
+    card.classList.remove("reveal", "slide-left", "slide-right");
+    card.classList.add("is-visible", "is-observed");
+  });
 }
 
 function renderTestimonials() {
@@ -659,10 +670,17 @@ function observeReveals() {
     revealObserver.observe(element);
 
     const rect = element.getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom > 0) {
+    if (rect.top < window.innerHeight + 120 && rect.bottom > -120) {
       element.classList.add("is-visible");
       revealObserver.unobserve(element);
     }
+  });
+}
+
+function forceRevealVisibility() {
+  document.querySelectorAll(".reveal").forEach((element) => {
+    element.classList.add("is-visible", "is-observed");
+    element.classList.remove("reveal");
   });
 }
 
@@ -820,6 +838,7 @@ function init() {
   bindEvents();
   handleHeaderState();
   observeReveals();
+  window.setTimeout(forceRevealVisibility, 220);
 
   window.setTimeout(() => {
     dom.loader.classList.add("is-hidden");
