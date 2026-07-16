@@ -467,11 +467,10 @@ function renderProducts() {
 }
 
 const featuredProductNames = [
-  "Sneaker Urban",
-  "Sneaker White",
-  "Sneaker Black",
-  "Running Pro",
-  "Street Pro"
+  "Camiseta Premium Black",
+  "Jogger Preta",
+  "Jaqueta Premium",
+  "Casual Black"
 ];
 
 function renderFeaturedProducts() {
