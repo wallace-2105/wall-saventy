@@ -203,7 +203,7 @@ const products = [
     id: 19,
     name: "Jaqueta Jeans",
     category: "jaquetas",
-    image: "",
+    image: "Jaqueta Jeans.webp",
     price: 289.9,
     description: "Camada clássica em denim encorpado e lavagem premium.",
     tone: "linear-gradient(135deg, #132034, #456990)"
@@ -212,7 +212,7 @@ const products = [
     id: 20,
     name: "Jaqueta Bomber",
     category: "jaquetas",
-    image: "",
+    image: "Jaqueta Bomber.png",
     price: 319.9,
     description: "Silhueta bomber com acabamento urbano e punhos firmes.",
     tone: "linear-gradient(135deg, #060606, #4a463f)"
@@ -221,7 +221,7 @@ const products = [
     id: 21,
     name: "Jaqueta Corta-Vento",
     category: "jaquetas",
-    image: "",
+    image: "Jaqueta Corta-Vento.webp",
     price: 279.9,
     description: "Leve, funcional e ideal para sobreposição em meia estação.",
     tone: "linear-gradient(135deg, #111827, #3c6df0)"
@@ -230,7 +230,7 @@ const products = [
     id: 22,
     name: "Jaqueta Streetwear",
     category: "jaquetas",
-    image: "",
+    image: "Jaqueta Streetwear.jpg",
     price: 339.9,
     description: "Volume moderno, visual street e detalhes discretos.",
     tone: "linear-gradient(135deg, #171717, #777064)"
@@ -239,7 +239,7 @@ const products = [
     id: 23,
     name: "Jaqueta Premium",
     category: "jaquetas",
-    image: "",
+    image: "Jaqueta Premium.webp",
     price: 389.9,
     description: "Construção refinada para um visual forte e sofisticado.",
     tone: "linear-gradient(135deg, #050505, #c8a45d)"
@@ -248,7 +248,7 @@ const products = [
     id: 24,
     name: "Jaqueta Casual",
     category: "jaquetas",
-    image: "",
+    image: "Jaqueta Casual.webp",
     price: 299.9,
     description: "Peça versátil para looks casuais com acabamento superior.",
     tone: "linear-gradient(135deg, #2b2d31, #c8c6bd)"
