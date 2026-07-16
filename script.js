@@ -257,7 +257,7 @@ const products = [
     id: 25,
     name: "Sneaker Urban",
     category: "tenis",
-    image: "",
+    image: "Sneaker Urban.jpg",
     price: 299.9,
     description: "Sneaker de linhas limpas para rotina urbana.",
     tone: "linear-gradient(135deg, #111111, #50545a)"
@@ -266,7 +266,7 @@ const products = [
     id: 26,
     name: "Sneaker White",
     category: "tenis",
-    image: "",
+    image: "Sneaker White.webp",
     price: 289.9,
     description: "Branco essencial com solado confortável e visual premium.",
     tone: "linear-gradient(135deg, #ffffff, #cfd2d8)"
@@ -275,7 +275,7 @@ const products = [
     id: 27,
     name: "Sneaker Black",
     category: "tenis",
-    image: "",
+    image: "Sneaker Black.jpg",
     price: 289.9,
     description: "Preto total para combinações limpas e noturnas.",
     tone: "linear-gradient(135deg, #020202, #2f3137)"
@@ -284,7 +284,7 @@ const products = [
     id: 28,
     name: "Running Pro",
     category: "tenis",
-    image: "",
+    image: "tenis1.jpg",
     price: 349.9,
     description: "Visual esportivo com energia premium e amortecimento leve.",
     tone: "linear-gradient(135deg, #111827, #3c6df0)"
