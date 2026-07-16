@@ -10,7 +10,7 @@ const categoryMeta = {
   calcas: {
     label: "Calças",
     description: "Jeans, cargos, joggers e moletons para rotina urbana.",
-    image: "calça1.jpg",
+    image: "calça.webp",
     background: "linear-gradient(135deg, #17191d 0%, #41464d 55%, #3c6df0 100%)"
   },
   tenis: {
