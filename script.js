@@ -501,6 +501,42 @@ function setActiveFilter(category) {
   });
 
   renderProducts();
+
+  const productsSection = document.querySelector("#products");
+  if (productsSection) {
+    // Ensure the products area is visible after filtering so reveal animations run
+    productsSection.scrollIntoView({ behavior: "auto", block: "start" });
+  }
+
+  // Re-evaluate reveals after layout settles
+  window.setTimeout(() => observeReveals(), 60);
+  
+  // Ensure all product cards in the grid are visible after filtering
+  const productCards = document.querySelectorAll('#products-grid .product-card');
+  productCards.forEach((c) => c.classList.add('is-visible', 'is-observed'));
+  productCards.forEach((c) => {
+    c.style.opacity = '1';
+    try {
+      c.style.setProperty('opacity', '1', 'important');
+    } catch (e) {
+      /* ignore */
+    }
+    const media = c.querySelector('.product-media');
+    if (media) {
+      media.style.opacity = '1';
+      try {
+        media.style.setProperty('opacity', '1', 'important');
+      } catch (e) {
+        /* ignore */
+      }
+    }
+  });
+
+  // Scroll to the last product card so items at the end (ex: joggers) are visible
+  window.setTimeout(() => {
+    const lastCard = document.querySelector('#products-grid .product-card:last-child');
+    if (lastCard) lastCard.scrollIntoView({ behavior: 'auto', block: 'end' });
+  }, 120);
 }
 
 function addToCart(productId) {
@@ -622,6 +658,12 @@ function observeReveals() {
   reveals.forEach((element) => {
     element.classList.add("is-observed");
     revealObserver.observe(element);
+
+    const rect = element.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      element.classList.add("is-visible");
+      revealObserver.unobserve(element);
+    }
   });
 }
 
