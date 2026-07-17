@@ -16,6 +16,8 @@
 ---
 
 ## 📸 Sobre o projeto
+<img width="941" height="539" alt="image" src="https://github.com/user-attachments/assets/2c979ee7-7262-4fe2-87f7-273b727a91ee" />
+
 
 Wall Seventy é uma loja virtual completa construída **apenas com HTML, CSS e JavaScript puro**, sem nenhum framework e sem back-end. O objetivo do projeto foi provar que dá para construir uma experiência de e-commerce completa — catálogo, filtros, carrinho, checkout e responsividade — usando só o essencial da web, e deixando a base pronta para evoluir com uma camada de pagamento real.
 
@@ -83,7 +85,7 @@ Essa é uma decisão de arquitetura consciente: manter o projeto 100% estático 
 
 ## 👤 Autor
 
-**Wallace**
+**Wallace Coimbra**
 
 - GitHub: [@wallace-2105](https://github.com/wallace-2105)
 
