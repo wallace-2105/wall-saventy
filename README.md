@@ -3,7 +3,6 @@
 # 👕 Wall Seventy
 
 **Loja virtual de roupas premium urbana — front-end 100% estático, sem back-end.**
-<img width="959" height="539" alt="image" src="https://github.com/user-attachments/assets/b15f16dc-b84f-4f55-9560-7f6144c9bb09" />
 
 
 [![Demo](https://img.shields.io/badge/demo-online-black?style=for-the-badge)](https://wallace-2105.github.io/wall-saventy/)
@@ -18,6 +17,8 @@
 ---
 
 ## 📸 Sobre o projeto
+<img width="959" height="539" alt="image" src="https://github.com/user-attachments/assets/b15f16dc-b84f-4f55-9560-7f6144c9bb09" />
+
 <img width="956" height="539" alt="image" src="https://github.com/user-attachments/assets/23977f2c-9489-468d-97f1-027d29c04884" />
 
 
