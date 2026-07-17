@@ -16,7 +16,7 @@
 ---
 
 ## 📸 Sobre o projeto
-<img width="941" height="539" alt="image" src="https://github.com/user-attachments/assets/2c979ee7-7262-4fe2-87f7-273b727a91ee" />
+<img width="956" height="539" alt="image" src="https://github.com/user-attachments/assets/23977f2c-9489-468d-97f1-027d29c04884" />
 
 
 Wall Seventy é uma loja virtual completa construída **apenas com HTML, CSS e JavaScript puro**, sem nenhum framework e sem back-end. O objetivo do projeto foi provar que dá para construir uma experiência de e-commerce completa — catálogo, filtros, carrinho, checkout e responsividade — usando só o essencial da web, e deixando a base pronta para evoluir com uma camada de pagamento real.
