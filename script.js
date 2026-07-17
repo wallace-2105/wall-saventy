@@ -492,7 +492,7 @@ function renderTestimonials() {
   dom.testimonials.innerHTML = testimonials
     .map(([name, location, text], index) => `
       <article class="testimonial-card reveal ${index % 2 ? "slide-right" : "slide-left"}">
-        <p>“${text}”</p>
+        <p>${text}</p>
         <strong>${name}</strong>
         <span>${location}</span>
       </article>
